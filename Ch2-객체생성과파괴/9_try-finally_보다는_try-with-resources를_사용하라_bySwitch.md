@@ -16,4 +16,23 @@
     }
   }
   ```
-  여기서 만약 자원을 하나 더 사용한다면 어떻게될까?
+  여기서 만약 자원을 하나 더 사용한다면 ? 매우 지저분한 코드가 된다.
+  ```java
+  static void copy(String src, String dst) throws IOException {
+    InputStream in = new FileInputStream(src);
+    try {
+      OutputStream out = new FileOutputStream(dst);
+      try {
+        byte[] buf = new byte[BUFFER_SIZE];
+        int n;
+        while ((n = in.read(buf)) >= 0)
+          out.write(buf, 0, n);
+      } finally {
+        out.close();
+      }
+    } finally {
+      in.close();
+    }
+  }
+  ```
+  
