@@ -19,6 +19,9 @@
 5. 자신 외에는 내부의 가변 컴포는트에 접근할 수 없도록 한다.
 ```
 ---
+<br>
+
+
 ```java
 //불변 복소수 클래스 예제
 public final class Complex {
@@ -48,6 +51,8 @@ public final class Complex {
 
 ---
 <br>
+
+
 ```java
 // 생성자 대신 정적 팩터리를 사용한 불변클래스 예제
 public class Complex {
@@ -72,6 +77,8 @@ public class Complex {
 ```
 ---
 <br>
+
+- 정리
 ```
 - 클래스는 꼭 필요한 경우가 아니라면 불변이어야 한다.
 - 성능때문에 어쩔 수 없다면 불변클래스와 쌍을 이루는 가변 동반클래스를 public클래스로 제공하도록 하자
