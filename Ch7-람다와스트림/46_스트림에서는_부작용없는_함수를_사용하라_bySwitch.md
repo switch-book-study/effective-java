@@ -17,3 +17,12 @@
   ```
   
   
+## 스트림의 collector
+   ```java
+   // 빈도표에서 가장 흔한 단어 10개를 뽑아내는 파이프라인
+   List<String> topTen = freq.keySet().stream()
+         .sorted(comparing(freq::get).reversed())
+         .limit(10)
+         .collect(toList());
+   ```
+   - 마지막 toList()는 Collectors의 메서드다. 이처럼 Collectors의 멤버를 정적 임포트하여 쓰면 스트림 파이프라인 가독성이 좋아져서 흔히 이렇게 쓴다.
