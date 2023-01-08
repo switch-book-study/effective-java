@@ -26,3 +26,12 @@
          .collect(toList());
    ```
    - 마지막 toList()는 Collectors의 메서드다. 이처럼 Collectors의 멤버를 정적 임포트하여 쓰면 스트림 파이프라인 가독성이 좋아져서 흔히 이렇게 쓴다.
+
+## Collectors의 메서드를 활용한 스트림 예시
+  - toMap수집기를 사용하여 문자열을 열거 타입 상수에 매핑한다.
+  ```java
+  priavate static final Map<String, Iperation> stringToEnum =
+    Stream.of(value()).collect(
+      toMap(Object::toString, e-> e));
+  ```
+  
