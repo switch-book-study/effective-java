@@ -33,4 +33,11 @@
     - anyMatch, allMatchm noneMatch처럼 조건에 맞으면 바로 반환되는 메서드도 병렬화에 적합하다.
     
   - 가변축소(mutable reduction)를 수행하는 Stream의 collect 메서드는 병렬화에 적합하지 않다.
-    - 
+    - 컬렉션들을 합치는 부담이 크다.
+    - Stream, Iterable, Collection이 병렬화 이점을 누리게하려면 spliterator 메서드를 재정의하고 성능을 테스트해야한다.
+   
+## 스트림을 잘못 병렬화하면 성능이 나빠질 뿐 아니라 결과자체가 잘못되거나 예상못한 동작이 발생할 수 있다.
+
+
+## 조간이 잘 갖춰지면 parallel 메서드 호출 하나로 거의 프로세서 코어 수에 비례하는 성능향상을 만끽할 수도 있다.
+
