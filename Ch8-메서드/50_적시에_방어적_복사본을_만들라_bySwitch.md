@@ -6,8 +6,26 @@
   - 아무리 자바라 해도 다른 클래스로부터의 침범을 아무런 노력 없이 다 막을 수 있는건 아니다.
   
   - 매개변수의 방어적 복사본을 만드는 예제코드
+  ```java
+  public Period(Date start, Date end) {
+    this.start = new Date(start.getTime());
+    this.end = new Date(end.getTime());
+    
+    if(this.start.compareTo(this.end) > 0)
+      throw new IllegalArgumentException(
+        this.start + "가" + this.end + "보다 늦다.");
+  }
+  ```
   
   - 필드의 방어적 복사본을 반환하는 예제코드
+  ```java
+  public Date start() {
+    return new Date(start.getTime());
+  }
+  public Date end() {
+    return new Date(end.getTime());
+  }
+  ```
   ```
   클래스가 클라이언트로부터 받는 혹은 클라이언트로 반환하는 구성요소가 가변이라면
   그요소는 반드시 방어적으로 복사해야한다.
