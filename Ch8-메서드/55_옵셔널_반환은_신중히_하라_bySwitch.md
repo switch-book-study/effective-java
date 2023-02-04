@@ -23,3 +23,9 @@
   
     return Optional.of(result);
   ```
+  - Optional.of의 value에 null을 넣으면 NPE을 던지니 주의하자.
+  - null값도 허용하는 옵셔널을 만들려면 Optional.ofNullable(value)를 사용하면 된다.
+  - 옵셔널을 반환하는 메서드에서는 절대 null을 반환하지 말자.
+  
+## Stream에서 optional
+  - stream의 종단연산 중 상당수가 optional을 반환한다.
