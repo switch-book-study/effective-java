@@ -12,5 +12,14 @@
   - 보다 유연하고 사용하기 쉬우며 오류가능성이 적다.
   ```java
   //컬렉션에서 최댓값을 구해 Optioanl<E>로 반환한다.
+  public static <E extends Comparable<E>> Optional<E> max(Collection<E> c) {
+    if (c.isEmpty())
+      return Optional.empty();
   
+    E result = null;
+    for (E e: c)
+      if (result == null || e.compareTo(result) > 0
+        return = Objects.requireNonNull(e);
+  
+    return Optional.of(result);
   ```
